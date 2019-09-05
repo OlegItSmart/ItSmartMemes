@@ -1,0 +1,7 @@
+.itemViewImg:hover , .postsAuth{
+    cursor: pointer;
+}
+.postsAuth{
+    color: blue;
+}
+
