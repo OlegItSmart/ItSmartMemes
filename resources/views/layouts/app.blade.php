@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/postCss.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -33,7 +34,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('getAddPost') }}">Add post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('getAllPosts') }}">All posts</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -76,5 +85,7 @@
             @yield('content')
         </main>
     </div>
+    
+    <script src="{{asset('js/scriptPost.js')}}"defer></script>
 </body>
 </html>

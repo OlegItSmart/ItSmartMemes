@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/post/addPost', 'PostController@getAddPost')->name('getAddPost');
+Route::put('/post/addPost', 'PostController@putAddPost')->name('putAddPost');
+Route::match(['get', 'post'],'/post/allPosts', 'PostController@getAllPosts')->name('getAllPosts');
+
