@@ -4,7 +4,12 @@
 
     <div class=" col-sm-8 col-xs-12 p-1 mx-auto">
         <div class="my-3 p-3 bg-white rounded shadow-sm">
-            <h4 class="border-bottom border-gray pb-2 mb-0 text-center" id="titlePosts">{{$title}}</h4>
+            <div class="d-flex justify-content-around " >
+                <h4 class="border-bottom border-gray pb-2 mb-0 text-center" id="titlePosts">{{$title}}</h4>
+                <button type="button" class="btn btn-outline-primary" id="buttonAllPosts" style="display: none; " 
+                title="Показать все посты">All posts</button>
+            </div>
+            <!-- <h4 class="border-bottom border-gray pb-2 mb-0 text-center" id="titlePosts">{{$title}}</h4> -->
                 @if(isset($data))
                     @foreach($data as $item)
                        @include('post.itemPost')
