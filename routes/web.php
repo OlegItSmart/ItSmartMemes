@@ -22,3 +22,5 @@ Route::get('/post/addPost', 'PostController@getAddPost')->name('getAddPost');
 Route::put('/post/addPost', 'PostController@putAddPost')->name('putAddPost');
 Route::match(['get', 'post'],'/post/allPosts', 'PostController@getAllPosts')->name('getAllPosts');
 
+Route::get('/user', 'UserController@index')->name('user');
+
