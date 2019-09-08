@@ -20,5 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/post/addPost', 'PostController@getAddPost')->name('getAddPost');
 Route::put('/post/addPost', 'PostController@putAddPost')->name('putAddPost');
+Route::get('/home/addComment', 'CommentController@getAddComment')->name('getAddComment');
+Route::put('/home/addComment', 'CommentController@putAddComment')->name('putAddComment');
 Route::match(['get', 'post'],'/post/allPosts', 'PostController@getAllPosts')->name('getAllPosts');
-
+// posr/{post}

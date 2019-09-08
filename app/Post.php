@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Transliterate;
 
+
 class Post extends Model
 {
     protected $fillable = [
@@ -28,4 +29,9 @@ class Post extends Model
     {
         return $this->belongsTo('App\User', 'author');
     }
+    public function comments()
+    {
+    return $this->hasMany('App\Comment');
+    }
+
 }
