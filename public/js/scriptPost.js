@@ -26,7 +26,7 @@ $('.butDel').click(function(){
         dataType : "json",
         success: function(response){
             $('.divPostView').each(function () { 
-                if($(this).data("post_id") == $post_id) $(this).hide();
+                if($(this).data("post_id") == $post_id) $(this).remove();
             });
             //alert(response.title);
         }
@@ -36,8 +36,17 @@ $('.butDel').click(function(){
 $('.postsAuth').click(function(){
     var postsAuth_name = $(this).data("name_authtor");
     $('#titlePosts').text('Посты добавленные пользователем:' + postsAuth_name);
+    $('#buttonAllPosts').show();
     $('.divPostView').each(function () { 
         if(postsAuth_name == $(this).data("name_authtor")) $(this).show();
         else $(this).hide();
+    });
+});
+
+$('#buttonAllPosts').click(function(){
+    $('#titlePosts').text('All posts');
+    $('#buttonAllPosts').hide();
+    $('.divPostView').each(function () { 
+        $(this).show();
     });
 });
