@@ -28,7 +28,7 @@ $('.butDel').click(function(){
             $('.divPostView').each(function () { 
                 if($(this).data("post_id") == $post_id) $(this).remove();
             });
-            //alert(response.title);
+           // alert(response.title);
         }
     });}
 });
