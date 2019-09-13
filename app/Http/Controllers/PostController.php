@@ -33,12 +33,15 @@ class PostController extends Controller
     {
         $messages = [
             'title.required' => 'Необходимо указать title',
-            'title.unique' => 'Название уже занято.',
-            'content.url' => 'Поле <url> должно быть корректным URL',
+            'title.unique' => 'Название: '.$request['title'].' уже занято.',
+            'content.url' => $request['content'].' не является корректным URL',
+            'content.required_without' => 'Поле <url> является обязательным, когда <text> отсутствует',
+            'description.required_without' => 'Поле <text> является обязательным, когда <url> отсутствует',
           ];   
         $this->validate($request, [
-            'title' => 'required|unique:posts|max:255',
-            'content'=> 'url',
+            'title' => 'bail|required|unique:posts|max:255',
+            'content'=> 'bail|required_without:description|url||nullable',
+            'description' => 'required_without:content',
             ],
             $messages);
         $post = Post::create($request->all());

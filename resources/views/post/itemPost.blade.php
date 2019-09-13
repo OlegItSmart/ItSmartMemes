@@ -1,7 +1,9 @@
 
     <div class=" media text-muted pt-3 divPostView" data-post_id="{{$item->id}}" data-name_authtor="{{$item->user->name}}">
+        @if(isset($item->content))
         <img class="itemViewImg bd-placeholder-img mr-2 rounded" width="50" height="50" src="{{$item->content}}"
              id="{{$item->content}}" title="{{$item->title}}">
+        @endif     
         <p class="media-body pb-4 mb-0 lh-125 border-bottom border-gray">
             <strong class="d-block text-gray-dark"><a href="{{ route('showPost', $item) }}">{{$item->title}}</a></strong>
             <strong class="d-block text-gray-dark postsAuth" title="Посты добавленные пользователем {{$item->user->name}}" 

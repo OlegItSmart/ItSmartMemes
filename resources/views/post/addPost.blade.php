@@ -21,7 +21,7 @@
                         {{ Form::text("title", null,
                             [
                             "class" => "form-control",
-                            "placeholder" => "Title",
+                            "placeholder" => "title",
                             ])
                         }}
                     </div>

@@ -27,5 +27,14 @@ class DatabaseSeeder extends Seeder
             'slug'=>'gennoe-redaktirovanie-izmenit-mir-bistree-chem-mi-dumaem_1',
             'author'=> 1,
         ]);
+
+        DB::table('posts')->insert([
+            'id'=> 2,
+            'title'=>'billboard',
+            'content'=>'https://i.kinja-img.com/gawker-media/image/upload/lufkpltdkvtxt9kzwn9u.jpg',
+            'description' => NULL,
+            'slug'=>'billboard_2',
+            'author'=> 1,
+        ]);
     }
 }
