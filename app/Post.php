@@ -9,7 +9,7 @@ use Transliterate;
 class Post extends Model
 {
     protected $fillable = [
-        'id','title','content','slug', 'author',
+        'id','title','content','description','slug', 'author',
     ];
     
     public function getRouteKeyName()
