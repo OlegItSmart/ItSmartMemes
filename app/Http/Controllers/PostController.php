@@ -68,8 +68,8 @@ class PostController extends Controller
         }
     }
 
-    public function showPost(Post $postItem){
-        $item = Post::find($postItem->id);
+    public function showPost(Post $post){
+        $item = $post;
         return view('post.showPost',compact('item'));
     }
     public function getUserPosts(User $user){

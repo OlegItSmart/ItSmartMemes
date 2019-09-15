@@ -5,12 +5,16 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Transliterate;
 
+
 class Post extends Model
 {
     protected $fillable = [
         'id','title','content','description','slug', 'author',
     ];
-    protected $with =['user'];
+
+    protected $with = ['comments','user'];
+    
+
     public function getRouteKeyName()
     {
         return 'slug';
@@ -28,4 +32,9 @@ class Post extends Model
     {
         return $this->belongsTo('App\User', 'author');
     }
+    public function comments()
+    {
+    return $this->hasMany('App\Comment');
+    }
+
 }
