@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Auth;
+use Notifiable;
 
 class Comment extends Model
 {
-    use Notifiable;
+    
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +16,8 @@ class Comment extends Model
      * @var array
      */
     protected $fillable = [
-        'user', 'body', 
+      'user_id', 'body', 
+        
     ];
 
     public function post()
