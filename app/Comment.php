@@ -16,10 +16,10 @@ class Comment extends Model
      * @var array
      */
     protected $fillable = [
-      'user_id', 'body', 
+      'user_id', 'body','post_id' 
         
     ];
-
+    protected $with = ['user'];
     public function post()
   {
     return $this->belongsTo('App\Post');

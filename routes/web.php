@@ -21,12 +21,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/post/addPost', 'PostController@getAddPost')->name('getAddPost');
 Route::put('/post/addPost', 'PostController@putAddPost')->name('putAddPost');
 Route::match(['get', 'post'],'/post/allPosts', 'PostController@getAllPosts')->name('getAllPosts');
-Route::get('/post/showPost/{postItem}', 'PostController@showPost')->name('showPost');
+Route::get('/post/showPost/{post}', 'PostController@showPost')->name('showPost');
 Route::get('/post/allPosts/{user}', 'PostController@getUserPosts')->name('getUserPosts');
 
 // posr/{post}
 Route::get('/home/addComment', 'CommentController@getAddComment')->name('getAddComment');
-Route::put('/home/addComment', 'CommentController@putAddComment')->name('putAddComment');
+Route::put('/post/showPost', 'CommentController@putAddComment')->name('putAddComment');
 
 
 
