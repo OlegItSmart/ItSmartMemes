@@ -11,8 +11,10 @@ class Post extends Model
     protected $fillable = [
         'id','title','content','description','slug', 'author',
     ];
-    protected $with = ['comments'];
+
+    protected $with = ['comments','user'];
     
+
     public function getRouteKeyName()
     {
         return 'slug';
